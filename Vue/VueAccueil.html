@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="../css/reset.css" type="text/css" media="all">
+		<link rel="stylesheet" href="../css/layout.css" type="text/css" media="all">
+		<link rel="stylesheet" href="../css/style.css" type="text/css" media="all">
+		<script type="text/javascript" src="../js/jquery-1.6.js" ></script>
+		<script type="text/javascript" src="../js/cufon-yui.js"></script>
+		<script type="text/javascript" src="../js/cufon-replace.js"></script>  
+		<script type="text/javascript" src="../js/Vegur_300.font.js"></script>
+		<script type="text/javascript" src="../js/PT_Sans_700.font.js"></script>
+		<script type="text/javascript" src="../js/PT_Sans_400.font.js"></script>
+		<script type="text/javascript" src="../js/tms-0.3.js"></script>
+		<script type="text/javascript" src="../js/tms_presets.js"></script>
+		<script type="text/javascript" src="../js/jquery.easing.1.3.js"></script>
+		<script type="text/javascript" src="../js/atooltip.jquery.js"></script>
+		<!--[if lt IE 9]>
+		<script type="text/javascript" src="js/html5.js"></script>
+		<link rel="stylesheet" href="css/ie.css" type="text/css" media="all">
+		<![endif]-->
+		<!--[if lt IE 7]>
+			<div style=' clear: both; text-align:center; position: relative;'>
+				<a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode"><img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." /></a>
+			</div>
+		<![endif]-->
+	</head>
+	<body id="page1">
+		<div class="main">
+<!--header -->
+			<header>
+				<div class="wrapper">
+               <h2><span class="color1">GoStage</span><span>.com</span></h2>					
+					<form id="search" method="post" action="../Control/ControlAuthentification.php">
+						<fieldset style="position:relative; top:-120px;">
+						<span class="color1">Déjà membre?</span>
+						<div  class="wrapper">
+								<span>Nom d'utilisateur:</span>
+								<div class="bg"><input type="text" class="input" name="Nom-utilisateur" ></div>								
+							</div>
+							<div  class="wrapper">
+								<span>Mot de passe:</span>
+								<div class="bg"><input type="password" class="input" name="mot_de_passe" ></div>		
+								</br><input type="submit" value="se connecter">													
+							</div>
+							
+							 
+                           <li><a href="../Vue/VueMembreRecruteurEtudiant.html"><span>Devenir membre</span></a></li>							
+						</fieldset>
+					</form>
+				</div>
+				<nav>				</nav>
+				<div id="slider">
+					<ul class="items">
+						<li>
+							<img src="../images/img1.jpg" alt="">
+							<div class="banner">
+								<span class="title"><span class="color2">We Have</span><span class="color1">Propositions</span><span>For Everybody</span></span>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor.</p>
+							</div>
+						</li>
+						<li>
+							<img src="../images/img2.jpg" alt="">
+							<div class="banner">
+								<span class="title"><span class="color2">Etudiant</span><span class="color1">Trouver un stage</span></span>
+								<p> 
+ 
+Vous êtes à la recherche d'un stage étudiant en entreprise, GoStage vous propose des offres de stages conventionnés dans toute la Tunisie et dans tous les secteurs... </p>
+							</div>
+						</li>
+						<li>
+							<img src="../images/img3.jpg" alt="">
+							<div class="banner">
+								<span class="title"><span class="color2">Entreprise</span><span class="color1">Deposer vos offres</span></span>
+								<p>Employeurs, créez votre profil et déposez gratuitement sur ce site vos offres de stages conventionnés... </p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</header>
+<!--header end-->
+<!--content -->
+			<article id="content"><div class="ic">More Website Templates @ TemplateMonster.com - November 14, 2011!</div>
+				<div class="wrapper">					</div>
+				</div>
+			</article>
+		</div>
+		<div class="bg1">
+			<div class="main">
+				<article id="content2">
+					<div class="wrapper">					</div>
+				</article>
+			</div>
+		</div>
+		<div class="main">
+<!--content end-->
+<!--footer -->
+			<footer>
+				<ul id="icons">
+					<li class="first">Follow Us:</li>
+					<li><a href="#" class="normaltip" title="Facebook"><img src="../images/icon1.jpg" alt=""></a></li>
+					<li><a href="#" class="normaltip" title="Twitter"><img src="../images/icon2.jpg" alt=""></a></li>
+					<li><a href="#" class="normaltip" title="Picasa"><img src="../images/icon3.jpg" alt=""></a></li>
+					<li><a href="#" class="normaltip" title="YouTube"><img src="../images/icon4.jpg" alt=""></a></li>
+				</ul>
+				GoStage.com &copy; 2013 
+				
+				<!-- {%FOOTER_LINK} -->
+			</footer>
+<!--footer end-->
+		</div>
+		<script type="text/javascript"> Cufon.now(); </script>
+		<script>
+			$(window).load(function(){
+				$('#slider')._TMS({
+					banners:true,
+					waitBannerAnimation:false,
+					preset:'diagonalFade',
+					easing:'easeOutQuad',
+					pagination:true,
+					duration:400,
+					slideshow:8000,
+					bannerShow:function(banner){
+						banner.css({marginRight:-500}).stop().animate({marginRight:0}, 600)
+					},
+					bannerHide:function(banner){
+						banner.stop().animate({marginRight:-500}, 600)
+					}
+					})
+			})
+		</script>
+	</body>
+</html>
