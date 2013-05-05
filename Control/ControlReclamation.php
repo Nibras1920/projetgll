@@ -3,7 +3,7 @@
 include('../Modele/ReclamationModele.php');
 
 $R = new client (NULL,"","","","","","",NULL,NULL);
-  				
+					
 					$R->setsujet($_POST['sujet']);
 					$R->settext($_POST['text']);
 					$R->setetatM($_POST['etatM']);
