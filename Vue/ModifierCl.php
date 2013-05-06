@@ -60,17 +60,54 @@ $lien = mysql_connect($serveur,$utilisateur,$pwd)/*En cas d'erreur */or die("imp
 //selection de la base de donnes
 mysql_select_db($bd, $lien);
 
-$id = $_POST['b'];
+$idR = $_POST['b'];
 
 //definition des requetes mysql pour afficher la liste des clients
-$query = "select * from client where idClient=$id ";
+$query = "select * from client where idClient= '$idR' ";
 $cur=mysql_query($query);
-					?>
-					<form id="ContactForm" method="post" action="ModifierClient.php">
-						<div>
+?>
+<table border="5" bordercolor="#009933">
+<tr align="center" valign="top" bgcolor="#009933" class="color1">
+	
+	<th width="69" nowrap="nowrap"><p><strong>Nom</strong></p></th>
+    <td>   <p>&nbsp;</p></td>
+	<th width="69" nowrap="nowrap"><p><strong>Prenom</strong></p></th>
+    <td>   <p>&nbsp;</p></td>
+	<th width="69" nowrap="nowrap"><p><strong>CIN</strong></p></th>
+    <td>   <p>&nbsp;</p></td>
+	<th width="69" nowrap="nowrap"><p><strong>Email</strong></p></th>
+	<td>   <p>&nbsp;</p></td>
+    <th width="69" nowrap="nowrap"><p><strong>Adresse</strong></p></th>
+    <td>   <p>&nbsp;</p></td>
+</tr>
+<?php
+while($ligne = mysql_fetch_array($cur))
+{
+?>
+<tr align="center" valign="middle">
+	
+	
+	<td><?php echo $ligne['Nom'];?></td>
+    <td></td>
+	<td><?php echo $ligne['Prenom'];?></td>
+    <td></td>
+	<td><?php echo $ligne['CIN'];?></td>
+    <td></td>
+	<td><?php echo $ligne['Email'];?></td>
+    <td></td>
+    <td><?php echo $ligne['Adresse'];?></td>
+    <td></td>
+    	
+</tr>
+<?php 
+}
+?>
+</table>
+<form id="ContactForm" method="post" action='../Control/ControlModifierClient.php'>
+		<div>
 						<div  class="wrapper">
 								
-								<div class="bg"><input type="text" class="input" name="id_client" style="display:none"></div>
+								<div class="bg"><input type="hidden" class="input" name="id_client" style="display:none"></div>
 							</div>
 						
 						
@@ -78,39 +115,33 @@ $cur=mysql_query($query);
 						
 							<div  class="wrapper">
 								<span>Nom:</span>
-								<div class="bg"><input type="text" class="input" name="Nom" > <?php 
-							echo $cur['Nom']
-								 ?></div>
+								<div class="bg"><input type="text" class="input" name="Nom" > </div>
 							</div>
 							<div  class="wrapper">
 								<span>Prenom:</span>
-								<div class="bg"><input type="text" class="input" name="Prenom" ><?php 
-							echo $cur['Prenom']
-								 ?></div>								
+								<div class="bg"><input type="text" class="input" name="Prenom"  ></div>								
 							</div>
 							<div  class="wrapper">
 								<span>CIN:</span>
-								<div class="bg"><input type="text" class="input" name="CIN" ><?php 
-							echo $cur['CIN']
-								 ?></div>								
+								<div class="bg"><input type="text" class="input" name="CIN" ></div>								
 							</div>
 							
 							<div  class="wrapper">
 								<span>Email:</span>
-								<div class="bg"><input type="text" class="input" name="Email" ><?php 
-							echo $cur['Email']
-								 ?></div>								
+								<div class="bg"><input type="text" class="input" name="Email" ></div>								
 							</div>
 							<div  class="wrapper">
-								<span>Service:</span>
-								<div class="bg"><input type="text" class="input" name="Login" ><?php 
-							echo $cur['Adresse']
-								 ?></div>								
+								<span>Adresse:</span>
+								<div class="bg"><input type="text" class="input" name="Login" ></div>
+                                 						
 							</div>
 							
+			
+		
+				
 							
-							<a href="GestionCollaborateurs.html"class="button1" onClick="document.getElementById('ContactForm').submit()">Annuler</a>
-							<a href="AccueilManager.html" class="button1" onClick="document.getElementById('ContactForm').submit()">Modifier</a>
+							
+							<input type="submit" class="button1" value="Modifier"/>
 							
 							
 						</div>
