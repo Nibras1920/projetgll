@@ -66,6 +66,39 @@ $id = $_POST['b'];
 $query = "select * from admin where idAdministrateur=$id ";
 $cur=mysql_query($query);
 					?>
+                    
+             <table border="5" bordercolor="#009933">
+<tr align="center" valign="top" bgcolor="#009933" class="color1">
+	
+	<th width="69" nowrap="nowrap"><p><strong>Nom</strong></p></th>
+    <td>   <p>&nbsp;</p></td>
+	<th width="69" nowrap="nowrap"><p><strong>Prenom</strong></p></th>
+    <td>   <p>&nbsp;</p></td>
+	
+	<th width="69" nowrap="nowrap"><p><strong>Email</strong></p></th>
+	<td>   <p>&nbsp;</p></td>
+   
+</tr>
+<?php
+while($ligne = mysql_fetch_array($cur))
+{
+?>
+<tr align="center" valign="middle">
+	
+	
+	<td><?php echo $ligne['Nom'];?></td>
+    <td></td>
+	<td><?php echo $ligne['Prenom'];?></td>
+   
+    <td></td>
+	<td><?php echo $ligne['Email'];?></td>
+    <td></td>
+    	
+</tr>
+<?php 
+}
+?>
+</table>
 					<form id="ContactForm" method="post" action="ModifierAdministrateur.php">
 						<div>
 						<div  class="wrapper">
