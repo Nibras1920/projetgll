@@ -63,10 +63,44 @@ mysql_select_db($bd, $lien);
 $id = $_POST['b'];
 
 //definition des requetes mysql pour afficher la liste des clients
-$query = "select * from manager where idManager=$id ";
+$query = "select * from collaborateur where idCollaborateur=$id ";
 $cur=mysql_query($query);
 					?>
-					<form id="ContactForm" method="post" action="ModifierManager.php">
+                    
+              <table border="5" bordercolor="#009933">
+<tr align="center" valign="top" bgcolor="#009933" class="color1">
+	
+	<th width="69" nowrap="nowrap"><p><strong>Nom</strong></p></th>
+    <td>   <p>&nbsp;</p></td>
+	<th width="69" nowrap="nowrap"><p><strong>Prenom</strong></p></th>
+    <td>   <p>&nbsp;</p></td>
+
+	<th width="69" nowrap="nowrap"><p><strong>Email</strong></p></th>
+	
+    <td>   <p>&nbsp;</p></td>
+</tr>
+<?php
+while($ligne = mysql_fetch_array($cur))
+{
+?>
+<tr align="center" valign="middle">
+	
+	
+	<td><?php echo $ligne['Nom'];?></td>
+    <td></td>
+	<td><?php echo $ligne['Prenom'];?></td>
+    <td></td>
+	
+	<td><?php echo $ligne['Email'];?></td>
+    <td></td>
+  
+    	
+</tr>
+<?php 
+}
+?>
+</table>
+					<form id="ContactForm" method="post" action="ModifierClient.php">
 						<div>
 						<div  class="wrapper">
 								
@@ -88,13 +122,15 @@ $cur=mysql_query($query);
 							echo $cur['Prenom']
 								 ?></div>								
 							</div>
-														
+							
+							
 							<div  class="wrapper">
 								<span>Email:</span>
 								<div class="bg"><input type="text" class="input" name="Email" ><?php 
 							echo $cur['Email']
 								 ?></div>								
 							</div>
+							
 							
 							
 							
